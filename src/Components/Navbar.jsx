@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+
 const Navbar = () => {
   const [display, setDisplay] = useState(false);
   const [blogs, setBlogs] = useState([]);
@@ -40,8 +41,8 @@ const Navbar = () => {
     setBlogs(updatedBlogs);
   }
 
-  const getItems = JSON.parse(localStorage.getItem("items"));
-  console.log(getItems);
+//   const getItems = JSON.parse(localStorage.getItem("items"));
+//   console.log(getItems);
 
   const getData = blogs.map((content, index) => {
     return (
@@ -57,12 +58,20 @@ const Navbar = () => {
   });
 
   return (
-    <div>
-      <button onClick={changeDisplay}>Add</button>
-
+    <div >
+        <h2 className="bg-white-100 shadow-md p-2 text-center ">
+            TechBLOG
+        </h2>
+        {/* welcome */}
+        <div className=" text-end p-2">
+      <button className="border-2 h-8 text-sm border-black p-1 rounded"  onClick={changeDisplay}>Add Blog
+      
+      </button>
+      </div>
       {display && (
-        <div>
+        <div className="flex flex-col border-2 p-2 border-black text-center">
           <input
+          className="border-2 border-black rounded p-2 text-center"
             type="text"
             onChange={(e) => setText(e.target.value)}
             value={text}
@@ -70,6 +79,7 @@ const Navbar = () => {
           />
           <br />
           <input
+          className="border-2 border-black rounded p-2 text-center"
             type="text"
             onChange={(e) => setContent(e.target.value)}
             value={content}
@@ -78,11 +88,12 @@ const Navbar = () => {
           <br />
           <input
             type="text"
+            className="border-2 border-black rounded p-2 text-center"
             onChange={(e) => setSource(e.target.value)}
             value={source}
             placeholder="Content"
           />
-
+<br/>
           <button onClick={addBlogs}>Submit</button>
         </div>
       )}

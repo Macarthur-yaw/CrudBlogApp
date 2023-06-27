@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-    Welcome
+    {/* Welcome */}
     <Routes>
       <Route path='/'  element={<Home/>}/>
       <Route path='/next/:id' element={<Nex/>}/>
