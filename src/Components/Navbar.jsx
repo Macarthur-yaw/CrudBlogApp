@@ -165,7 +165,7 @@ const Navbar = () => {
                   className="text-blue-500 underline ml-2"
                   to={`/next/${index}`}
                 >
-                  Click
+                  See more
                 </Link>
               </div>
             </div>
