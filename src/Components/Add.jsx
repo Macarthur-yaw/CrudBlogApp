@@ -13,7 +13,7 @@ const Add = () => {
 
   useEffect(() => {
     const getInfo = JSON.parse(localStorage.getItem("items"));
-    setInfo(getInfo);
+    setInfo(getInfo || []);
   }, []);
 
   function addBlogs() {

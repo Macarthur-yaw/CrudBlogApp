@@ -4,7 +4,7 @@
 import './App.css'
 import Home from './Components/Home'
 import { Routes,Route } from 'react-router'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Nex from './Nex'
 
 function App() {
