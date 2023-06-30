@@ -1,9 +1,9 @@
-import Navbar from "./Navbar";
+import Add from "./Add";
 const Home = () => {
     return ( 
         <div>
             {/* Welcmome to the homepage */}
-        <Navbar/>
+        <Add/>
         </div>
      );
 }
