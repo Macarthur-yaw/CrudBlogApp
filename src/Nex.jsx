@@ -23,8 +23,8 @@ const Nex = () => {
   });
 
   return (
-    <div>
-      <h1>Welcome to the next page</h1>
+    <div className="border-2  text-center p-6">
+      <h1>Welcome to this page</h1>
       {getData}
     </div>
   );

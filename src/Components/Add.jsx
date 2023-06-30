@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus,faTimes} from "@fortawesome/free-solid-svg-icons";
 
 const Add = () => {
   const [display, setDisplay] = useState(false);
@@ -86,57 +88,58 @@ const Add = () => {
           className="border-2 h-8 text-sm border-black p-1 rounded"
           onClick={changeDisplay}
         >
+          <FontAwesomeIcon icon={faPlus}/>
           Add Blog
         </button>
       </div>
       {display && (
-        <div className="flex flex-col w-96 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-xl p-2 text-center bg-gray-100">
-          <input
-            className="border-2 border-black rounded p-2 text-center"
-            type="text"
-            onChange={(e) => setText(e.target.value)}
-            value={text}
-            placeholder="Name"
-          />
-          <br />
-          <input
-            className="border-2 border-black rounded p-2 text-center"
-            type="text"
-            onChange={(e) => setContent(e.target.value)}
-            value={content}
-            placeholder="Source"
-          />
-          <br />
-          <input
-            type="text"
-            className="border-2 border-black rounded p-2 text-center"
-            onChange={(e) => setSource(e.target.value)}
-            value={source}
-            placeholder="Content"
-          />
-          <br />
-          <div className="flex flex-row">
-            <button
-              className="border-2 border-black w-20 mx-auto rounded bg-black text-white"
-              onClick={addBlogs}
-            >
-              Submit
-            </button>
-
-            {active && updateIndex !== null ? (
-              <button
-                className="border-2 border-black w-20 mx-auto rounded bg-black text-white"
-                onClick={handleUpdate}
-              >
-                Update
-              </button>
-            ) : (
-              <button className="disabled" disabled>
-                Update
-              </button>
-            )}
-          </div>
-        </div>
+  
+   <div className="flex flex-col w-96 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-xl p-2 bg-gray-100">
+     <div className="flex justify-end">
+       <FontAwesomeIcon onClick={()=>setDisplay(!true)} className=" p-2 cursor-pointer" icon={faTimes} />
+     </div>
+     <input
+       className="border-2 border-black rounded p-2 text-center"
+       type="text"
+       onChange={(e) => setText(e.target.value)}
+       value={text}
+       placeholder="Name"
+     />
+     <br />
+     <input
+       className="border-2 border-black rounded p-2 text-center"
+       type="text"
+       onChange={(e) => setContent(e.target.value)}
+       value={content}
+       placeholder="Source"
+     />
+     <br />
+     <input
+       type="text"
+       className="border-2 border-black rounded p-2 text-center"
+       onChange={(e) => setSource(e.target.value)}
+       value={source}
+       placeholder="Content"
+     />
+     <br />
+     <div className="flex flex-row">
+       <button
+         className="border-2 border-black w-20 mx-auto rounded bg-black text-white"
+         onClick={addBlogs}
+       >
+         Submit
+       </button>
+   
+       {active && updateIndex !== null && (
+         <button
+           className="border-2 border-black w-20 mx-auto rounded bg-black text-white"
+           onClick={handleUpdate}
+         >
+           Update
+         </button>
+       )}
+     </div>
+   </div>
       )}
       <div className="p-4">
         <div className="grid grid-cols-1 gap-4 mt-4">
